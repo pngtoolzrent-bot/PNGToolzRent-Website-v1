@@ -1,0 +1,550 @@
+/* ============================================================
+   SECTIONS.CSS — About, How to Rent, Payment, Contact,
+                  Reviews, Footer
+   ============================================================ */
+
+
+/* ══════════════════════════════════════════════════════════
+   ABOUT SECTION
+   ══════════════════════════════════════════════════════════ */
+
+#about {
+  background: var(--dark);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Feature list */
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(255, 140, 0, 0.12);
+  border: 1px solid rgba(255, 140, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-text strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.feature-text p {
+  font-size: 0.88rem;
+  color: var(--gray-light);
+}
+
+/* Info card */
+.about-visual {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-visual::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.vis-header {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.vis-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.vis-row:last-child { border-bottom: none; }
+
+.vis-label  { color: var(--gray-light); }
+
+.vis-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.vis-val.orange { color: var(--orange); }
+.vis-val.cyan   { color: var(--cyan); }
+.vis-val.green  { color: #4ade80; }
+
+
+/* ══════════════════════════════════════════════════════════
+   HOW TO RENT SECTION
+   ══════════════════════════════════════════════════════════ */
+
+#how {
+  background: var(--dark);
+}
+
+.steps-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+/* Connecting line between steps */
+.steps-wrap::before {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: calc(12.5% + 20px);
+  right: calc(12.5% + 20px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--cyan));
+  z-index: 0;
+}
+
+.step-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 22px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.step-card:hover {
+  border-color: rgba(255, 140, 0, 0.35);
+  transform: translateY(-3px);
+}
+
+.step-num {
+  width: 52px; height: 52px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--black);
+  margin: 0 auto 18px;
+  border: 3px solid var(--dark);
+}
+
+.step-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  line-height: 1.5;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   PAYMENT METHODS SECTION
+   ══════════════════════════════════════════════════════════ */
+
+#payment {
+  background: var(--black);
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.payment-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.payment-card:hover {
+  border-color: rgba(0, 200, 212, 0.35);
+  transform: translateY(-3px);
+}
+
+/*
+  PAYMENT LOGO IMAGES
+  ─────────────────────────────────────────────────────────────
+  Place bank/payment logo PNG files at:
+    assets/images/payments/bsp.png
+    assets/images/payments/kinabank.png
+    assets/images/payments/cellmoni.png
+
+  The .pay-logo-wrap holds the image. Drop in your file and
+  the logo appears automatically. The fallback emoji shows
+  until the image file is present.
+  ─────────────────────────────────────────────────────────────
+*/
+.pay-logo-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: rgba(0, 200, 212, 0.08);
+  border: 1px solid rgba(0, 200, 212, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pay-logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 7px;
+}
+
+/* Fallback emoji shown when image file is missing */
+.pay-logo-wrap .pay-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.pay-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.pay-detail {
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   CONTACT SECTION
+   ══════════════════════════════════════════════════════════ */
+
+#contact {
+  background: var(--dark);
+}
+
+.contact-top {
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.12) 0%, rgba(0, 200, 212, 0.08) 100%);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  border-radius: 16px;
+  padding: 44px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.contact-top-text h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.contact-top-text p {
+  color: var(--gray-light);
+  font-size: 0.95rem;
+  max-width: 400px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--white);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.contact-link:hover {
+  border-color: rgba(255, 140, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.cl-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.cl-icon.whatsapp  { background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.3); }
+.cl-icon.telegram  { background: rgba(0, 136, 204, 0.15);  border: 1px solid rgba(0, 136, 204, 0.3); }
+.cl-icon.channel   { background: rgba(0, 200, 212, 0.12);  border: 1px solid rgba(0, 200, 212, 0.25); }
+.cl-icon.facebook  { background: rgba(24, 119, 242, 0.12); border: 1px solid rgba(24, 119, 242, 0.25); }
+
+.cl-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cl-sub {
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   REVIEWS SECTION
+   ══════════════════════════════════════════════════════════ */
+
+#reviews {
+  background: var(--black);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.review-card:hover {
+  border-color: rgba(255, 140, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.review-stars {
+  color: var(--orange);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.av-orange { background: rgba(255, 140, 0, 0.2);  color: var(--orange); border: 1px solid rgba(255, 140, 0, 0.3); }
+.av-cyan   { background: rgba(0, 200, 212, 0.15); color: var(--cyan);   border: 1px solid rgba(0, 200, 212, 0.25); }
+.av-green  { background: rgba(74, 222, 128, 0.12); color: #4ade80;       border: 1px solid rgba(74, 222, 128, 0.25); }
+
+.author-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; }
+.author-loc  { font-size: 0.78rem; color: var(--gray); }
+
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════════════ */
+
+footer {
+  background: var(--dark);
+  border-top: 1px solid var(--border);
+  padding: 48px 5% 28px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  max-width: 300px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.footer-col h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 14px;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--gray-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--orange); }
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.social-btn {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.social-btn:hover {
+  background: rgba(255, 140, 0, 0.15);
+  border-color: rgba(255, 140, 0, 0.4);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.footer-copy span { color: var(--orange); }
+
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — All sections
+   ══════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .about-grid        { grid-template-columns: 1fr; }
+  .about-visual      { order: -1; }
+  .payment-grid      { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .reviews-grid      { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .contact-links     { grid-template-columns: 1fr; max-width: 360px; }
+  .contact-top       { flex-direction: column; }
+  .steps-wrap        { grid-template-columns: repeat(2, 1fr); }
+  .steps-wrap::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .steps-wrap        { grid-template-columns: 1fr; }
+  .contact-links     { grid-template-columns: 1fr 1fr; max-width: 100%; }
+  .footer-top        { flex-direction: column; }
+  .footer-bottom     { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .contact-links { grid-template-columns: 1fr; }
+}
